@@ -1,0 +1,3 @@
+method,file_name,validation_accuracy,public_score,submission_ref
+single_view,submission.csv,0.9482,0.8300,57801555
+horizontal_flip_tta,submission_flip_tta.csv,0.9520,0.8360,57802204

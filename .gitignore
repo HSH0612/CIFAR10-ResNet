@@ -1,0 +1,14 @@
+data/
+.venv/
+.vscode/
+.uv-cache/
+__pycache__/
+*.pyc
+checkpoints/
+submission*.csv
+.env
+results/**/*.pt
+results/**/*.pt.tmp
+runs/
+tmp/
+kaggle_export/kernel-metadata.json

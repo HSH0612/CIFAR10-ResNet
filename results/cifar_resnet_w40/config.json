@@ -1,0 +1,15 @@
+{
+  "epochs": 100,
+  "batch_size": 128,
+  "workers": 0,
+  "width": 40,
+  "learning_rate": 0.1,
+  "seed": 42,
+  "train_size": 45000,
+  "validation_size": 5000,
+  "trainable_parameters": 4368690,
+  "optimizer": "SGD momentum=0.9 weight_decay=5e-4",
+  "scheduler": "cosine annealing",
+  "augmentation": "random crop padding=4; random horizontal flip",
+  "normalization": "(x - 0.5) / 0.5 per channel"
+}

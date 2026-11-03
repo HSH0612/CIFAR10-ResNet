@@ -1,0 +1,6 @@
+{
+  "kind": "public",
+  "accuracy": 0.836,
+  "submission_ref": 57802204,
+  "method": "Horizontal-flip test-time augmentation"
+}
