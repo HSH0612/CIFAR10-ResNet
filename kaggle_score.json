@@ -1,6 +1,5 @@
 {
-  "kind": "public",
-  "accuracy": 0.836,
-  "submission_ref": 57802204,
-  "method": "Horizontal-flip test-time augmentation"
+  "kind": "private",
+  "accuracy": 0.813,
+  "source": "Final Kaggle competition leaderboard"
 }

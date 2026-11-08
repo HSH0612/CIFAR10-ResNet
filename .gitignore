@@ -18,3 +18,4 @@ results/**/*.pt.tmp
 runs/
 tmp/
 kaggle_export/kernel-metadata.json
+/notebooks/build_notebook.py

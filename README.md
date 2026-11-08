@@ -88,19 +88,19 @@ averages the model logits for each image and its horizontal flip. On the fixed
 The first submission scored 83.00% on Kaggle's public split, and the flip-TTA
 submission scored 83.60%. Both completed scores and their submission references
 are recorded in `results/cifar_resnet_w40/kaggle_submissions.csv`; no test labels are
-used locally. The final private score is not yet available.
+used locally. The final Kaggle private leaderboard accuracy was **81.30%**,
+recorded separately in `kaggle_score.json` without assigning it to either CSV.
 Reproduce the augmented validation result with
 `uv run --extra notebook python evaluate.py --run runs/reproduction-001 --tta-flip`; it writes separate
 `per_class_flip_tta.csv` and `confusion_flip_tta.png` files.
 
-We audited the validation-to-public-score gap after the first submission.
-Regenerating the original CSV from `best.pt` produced identical bytes; test IDs match
-the sample CSV in order; the training and validation splits have no shared IDs
-or exact duplicate image files; and validation and test use the same image
-transform. Mean model confidence was 97.64% on validation images and 93.80%
-on test images. The public test images appear harder for this model, but their
-labels are unavailable locally, so these checks do not establish a unique
-cause for the accuracy gap.
+After my first submission, I checked whether a mistake in my prediction pipeline
+could explain the gap between validation and the public score. I regenerated
+the same CSV from `best.pt` and confirmed that its test IDs matched the sample
+submission in order. The training and validation splits shared no IDs or exact
+duplicate files, and I used the same image transform for validation and test.
+Mean confidence was 97.64% on validation images and 93.80% on test images.
+Without the test labels, I could not determine why the accuracy differed.
 
 The PDF report is prepared outside this Git repository and submitted separately
 to Brightspace.
@@ -133,13 +133,11 @@ private leaderboard.
 `notebooks/Project1_Results.ipynb` is the executed record of the original
 `results/cifar_resnet_w40/` run. It contains parameter checks, training curves,
 per-class validation results, a confusion matrix, and separate checks for the
-single-view and flip-TTA submission files. Regenerate it with
-`uv run --extra notebook python notebooks/build_notebook.py` if the recorded
-results or `kaggle_score.json` change. The prediction CSVs are omitted from
-Git, so rerunning their format checks requires regenerating the CSVs locally;
-the saved notebook output shows both checks from the completed experiment.
-Its 83.60% result is labeled as a public leaderboard score, separate from the
-final private score.
+single-view and flip-TTA submission files. Open it in Jupyter or VS Code to
+view the saved results. To rerun the CSV checks, first regenerate the prediction
+files using the commands above.
+It prints the final private test accuracy (81.30%) and the trainable parameter
+count (4,368,690) separately from the two public scores.
 
 ## Reference
 
