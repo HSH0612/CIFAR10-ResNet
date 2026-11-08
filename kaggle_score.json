@@ -1,5 +1,7 @@
 {
   "kind": "private",
   "accuracy": 0.813,
-  "source": "Final Kaggle competition leaderboard"
+  "file_name": "submission_flip_tta.csv",
+  "submission_ref": 57802204,
+  "source": "Kaggle competition Submissions page"
 }

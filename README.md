@@ -85,10 +85,9 @@ For a second prediction run, `predict.py --tta-flip --output submission_flip_tta
 averages the model logits for each image and its horizontal flip. On the fixed
 5,000-image validation split, this increased accuracy from 94.82% to 95.20%.
 The first submission scored 83.00% on Kaggle's public split, and the flip-TTA
-submission scored 83.60%. Both completed scores and their submission references
-are recorded in `results/cifar_resnet_w40/kaggle_submissions.csv`; no test labels are
-used locally. The final Kaggle private leaderboard accuracy was **81.30%**,
-recorded separately in `kaggle_score.json` without assigning it to either CSV.
+submission scored 83.60%. Their private scores were 80.20% and 81.30%, respectively.
+My final test accuracy was **81.30%** from `submission_flip_tta.csv`. I recorded
+both scores and submission IDs in `results/cifar_resnet_w40/kaggle_submissions.csv`.
 Reproduce the augmented validation result with
 `uv run --extra notebook python evaluate.py --run runs/reproduction-001 --tta-flip`; it writes separate
 `per_class_flip_tta.csv` and `confusion_flip_tta.png` files.
@@ -133,7 +132,8 @@ single-view and flip-TTA submission files. Open it in Jupyter or VS Code to
 view the saved results. To rerun the CSV checks, first regenerate the prediction
 files using the commands above.
 It prints the final private test accuracy (81.30%) and the trainable parameter
-count (4,368,690) separately from the two public scores.
+count (4,368,690). It also includes the saved output from a short training check
+(one epoch, five training batches), separate from the original 100-epoch run.
 
 ## Reference
 
