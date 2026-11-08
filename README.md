@@ -42,8 +42,7 @@ this competition's data as input, paste and run
 `kaggle_export/export_data.py`, and download its
 `project1_competition_data.zip` output. Pass that local ZIP to
 `download_data.py --archive`. The exporter uses only the competition files
-mounted in your own Kaggle account. No access to another person's private
-Notebook is required.
+mounted in your Kaggle Notebook.
 
 Alternatively, create an API token in your [Kaggle account settings](https://www.kaggle.com/settings/api),
 put `KAGGLE_API_TOKEN=your_token` in a local `.env` file, and run
@@ -101,9 +100,6 @@ submission in order. The training and validation splits shared no IDs or exact
 duplicate files, and I used the same image transform for validation and test.
 Mean confidence was 97.64% on validation images and 93.80% on test images.
 Without the test labels, I could not determine why the accuracy differed.
-
-The PDF report is prepared outside this Git repository and submitted separately
-to Brightspace.
 
 ## Architecture and experiment record
 
